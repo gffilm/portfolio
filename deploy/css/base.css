@@ -1,0 +1,61 @@
+
+/* Shortcuts */
+.center {
+  text-align: center;
+  width:100%;
+}
+.clear {
+    clear: both;
+}
+.txt-right {
+    text-align: right;
+
+}
+.padRight {
+    padding-right: 1em;
+}
+
+.padLeft {
+    padding-left: 1em;
+}
+
+.padTop {
+    padding-top: 1em;
+}
+
+.padBtm {
+    padding-bottom: 1em;
+}
+
+
+
+/* Text transforms */
+.uc {
+    text-transform: uppercase;
+}
+.lc {
+    text-transform: lowercase;
+}
+
+
+
+/* Spacer Margins */
+.spacer {
+    margin: 2em;
+}
+.spacer.one {
+    margin: 1em;
+}
+.spacer.half {
+    margin: .5em;
+}
+.spacer.three {
+    margin: 3em;
+}
+
+.del-btn,
+.del-btn:focus,
+.del-btn:hover {
+    background-image: linear-gradient(to bottom, #0b708e 0px, #001b42 100%);
+    background-color: #0b708e;
+}

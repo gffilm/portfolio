@@ -1,0 +1,41 @@
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="HeaderController">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" ng-click="getBrandRef()">courseHub</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            
+            <!-- Login -->
+            <li ng-class="{ active: isActive('/login')}">
+              <a href="#login" ng-hide="$root.loggedIn">Login</a>
+            </li>
+
+            <!-- Register -->
+            <li ng-class="{ active: isActive('/register')}">
+              <a href="#register">Register</a>
+            </li>
+            <!-- Hub -->
+            <li ng-class="{ active: isActive('/hub')}">
+              <a href="#hub" ng-show="$root.loggedIn">Hub</a>
+            </li>
+             <!-- usermanager -->
+            <li ng-class="{ active: isActive('/usermanager')}">
+              <a href="#usermanager" ng-show="$root.loggedIn">User Admin</a>
+            </li>
+             <!-- Logout -->
+            <li class="right">
+              <a href="" ng-show="$root.loggedIn" ng-controller="RegistrationController" ng-click="logout()">Log out</a>
+            </li>
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>

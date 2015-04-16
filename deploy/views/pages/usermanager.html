@@ -1,0 +1,43 @@
+<!-- Manager -->
+<div class="theme-showcase" role="main">
+	<div class="jumbotron">
+		<h3>User Manager</h3>
+		<p>Welcome to the user manager page</p>
+		<confirm class="confirm" id="confirm">Hi</confirm>
+		<label>Search:</label>
+		<input type="text" placeholder="Enter User Info" ng-model="queryTest">
+				<table class="table table-striped" ng-show="users">
+					<thead>
+					  <tr>
+						<th>#</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Date Added</th>
+						<th>Email</th>
+						<th></th>
+						<th></th>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr ng-repeat="(key, user) in users | limitTo: 10 | filter:queryTest | orderBy:'firstName'">
+						<td>{{$index + 1}}</td>
+						<td>{{user.firstName}}</td>
+						<td>{{user.lastName}}</td>
+						<td>{{user.date | date: "MMM d, yyyy h:mm a"}}</td>
+						<td>{{user.email}}</td>
+						<td>
+							<a class="btn btn-info"
+								ng-href="#usermanager/edit/{{user.$id}}"
+								ng-show="hasRecords">Edit User</a>
+						</td>
+						<td>
+							<button class="btn btn-info del-btn"
+								ng-confirm-click="deleteUser(user)"
+								content="Are you sure you want to delete this user?"
+								ng-show="hasRecords">Delete User</button>
+						</td>
+					  </tr>
+					</tbody>
+				  </table><!-- table-striped -->
+	</div><!-- jumbotron -->
+</div><!-- theme-showcase -->

@@ -1,0 +1,26 @@
+
+<div class="theme-showcase" role="main">
+    <div class="jumbotron">
+        <h3>Login</h3>
+        <p>Welcome to the login page. Please enter your credentials to access your hub.</p>
+        <form name="loginForm" role="form">
+            <div class="form-group">
+                <label for="email">Email address:</label>
+                <input type="email" name="email" class="form-control" placeholder="Enter your email"
+                ng-model="user.email" ng-model-options="{ updateOn: 'mousedown blur' }" required>
+                <label ng-show="loginForm.email.$invalid">The e-mail address is invalid</label>
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" name="password" class="form-control" placeholder="Enter your password"
+                ng-model="user.password" required>
+                <label ng-show="loginForm.password.$invalid">The password is invalid</label>
+            </div>
+            <div class="checkbox">
+                <label>
+                <input type="checkbox">Remember me</label>
+            </div>
+            <button type="submit" ng-disabled="loginForm.$invalid" class="btn btn-default" ng-click="login()">Login</button>
+        </form>
+    </div><!-- jumbotron -->
+</div><!-- theme-showcase -->
